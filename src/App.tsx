@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { TaskProvider } from "./context/Context";
+import Form from "./component/Form";
+import List from "./component/List";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TaskProvider>
+      <div className="max-w-md mx-auto mt-10 p-4 shadow-lg rounded bg-white">
+        <h1 className="text-2xl font-bold mb-4 text-center">Todo App</h1>
+        <Form />
+        <List />
+      </div>
+    </TaskProvider>
   );
-}
+};
 
 export default App;
